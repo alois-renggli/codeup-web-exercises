@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register With Us</title>
+</head>
+<body>
+<form method="POST" action="">
+    <label for="email"><strong>Email</strong></label>
+    <input type="text" name="email" id="email" placeholder="Enter your email address...">
+    <br>
+
+    <label for="password"><strong>Password</strong></label>
+    <input type="password" name="password" id="password" placeholder="Enter your password...">
+    <hr>
+
+    <label for="bio"><strong>Bio</strong></label>
+    <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Enter a short description of yourself here..."></textarea>
+    <hr>
+
+    <h3>How did you hear about us?</h3>
+    <label for="billboard">
+        <input type="checkbox" name="advertisement" value="billboard" id="billboard">Billboard
+    </label>
+    <br>
+    <label for="radio_advertisement">
+        <input type="checkbox" name="advertisement" value="radio_advertisement" id="radio_advertisement">Radio Advertisement
+    </label>
+    <br>
+    <label for="internet">
+        <input type="checkbox" name="advertisement" value="interent_advertisement" id="internet">Internet Advertisement
+    </label>
+    <br>
+    <label for="other">
+        <input type="checkbox" name="advertisement" value="other" id="other">Other
+        <input type="text" name="other" id="other" placeholder="What was it?">
+    </label>
+    <hr>
+
+    <h3>What browser do you use?</h3>
+    <label for="browser">
+        <select name="browser" id="browser">
+            <option value="google">Google</option>
+            <option value="firefox">FireFox</option>
+            <option value="Safari">Safari</option>
+        </select>
+    </label>
+    <hr>
+    <button type="submit">Submit Form Here</button>
+    <hr>
+</form>
+</body>
+</html>
