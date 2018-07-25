@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Property Search</title>
+</head>
+<body>
+    <h2>Property Search</h2>
+    <hr>
+    <form method="POST" action="https://request-inspector.glitch.me/">
+        <!-- - This will be a form for a property search.-->
+        <!-- - Add all the appropriate inputs you would need to conduct a property search:-->
+
+        <!-- - Property type, square footage, min_price, max_price, zipcode, # of bedrooms, # of bathrooms, etc...-->
+        <label for="type">
+            Property Type
+            <select name="type" id="type" multiple>
+                <option value="land">Land</option>
+                <option value="apartment">Apartment</option>
+                <option value="room">Room Rentals</option>
+                <option value="house">House</option>
+            </select>
+        </label>
+        <br>
+        <label for="footage">
+            Square Footage
+            <select name="footage" id="footage" multiple>
+                <option value="0-1000">0-1000 sq ft</option>
+                <option value="1000-2000">1000-2000 sq ft</option>
+                <option value="2000+">2000+</option>
+            </select>
+        </label>
+        <br>
+        <label for="min_price">
+            Minimum Price
+            <input type="number" name="min_price" id="min_price" min="0" step="10000" value="0">
+        </label>
+        <br>
+        <label for="max_price">
+            Maximum Price
+            <input type="number" name="min_price" id="max_price" min="0" step="10000" value="100000">
+        </label>
+        <br>
+        <label for="zipcode">
+            Zip Code
+            <input type="text" name="zipcode" id="zipcode" maxlength="5" placeholder="Enter 5 digit zip code here..." size="25">
+        </label>
+        <br>
+        <label for="bedrooms">
+            Number of Bedrooms
+            <select name="bedrooms" id="bedrooms" multiple>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4+">4+</option>
+            </select>
+        </label>
+        <br>
+        <label for="bathrooms">
+            Number of Bathrooms
+            <select name="bathrooms" id="bathrooms" multiple>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4+">4+</option>
+            </select>
+        </label>
+        <br>
+        <label for="lot">
+            Lot Size
+            <select name="lot" id="lot" multiple>
+                <option value="0-1">0-1 acre</option>
+                <option value="1-10">1-10 acres</option>
+                <option value="10+">10+</option>
+            </select>
+        </label>
+        <hr>
+
+        <!-- - The submit button's text should say "Search now"-->
+        <button type="submit">Search now</button>
+    </form>
+</body>
+</html>
