@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+</head>
+<body>
+    <h2>Checkout</h2>
+    <hr>
+    <form method="POST" action="https://request-inspector.glitch.me/">
+        <!-- - This will be a form for a credit card checkout-->
+        <!-- - Make all fields required except for the checkbox-->
+
+        <!-- - Add an input for credit card number, expiration month/year, security code-->
+        <h3>Enter Your Credit Card Information:</h3>
+        <label for="credit_card">
+            Credit Card Number
+            <input type="text" name="credit_card" id="credit_card" maxlength="16" size="40" autofocus required placeholder="Enter your credit card number.">
+        </label>
+        <br>
+        <label for="expiration">
+            Expiration Date
+            <input type="month" name="expiration" id="expiration" required>
+        </label>
+        <br>
+        <label for="security">
+            Security Code
+            <input type="text" name="security" id="security" maxlength="3" size="40" required placeholder="Enter 3 digit security code.">
+        </label>
+        <hr>
+
+        <!-- - Add inputs for billing address-->
+        <h3>Enter your Billing Address:</h3>
+        <label for="street">
+            Street Address
+            <input type="text" name="street" id="street" size="40" required placeholder="Enter your street address here..">
+        </label>
+        <br>
+        <label for="town">
+            Town
+            <input type="text" name="town" id="town" size="40" required placeholder="Enter your town name here...">
+        </label>
+        <br>
+        <label for="state">
+            State
+            <input type="text" name="state" id="state" size="40" required placeholder="Enter your State here...">
+        </label>
+        <br>
+        <label for="zip">
+            Zip Code
+            <input type="text" name="zip" id="zip" size="25" required placeholder="Enter your zip code." maxlength="7">
+        </label>
+        <hr>
+
+        <!-- - Add a checkbox that says "Keep this credit card on file for future transactions"-->
+        <label for="transactions">
+            Keep this credit card on file for future transactions <input type="checkbox" name="transactions" id="transactions" checked>
+        </label>
+        <hr>
+
+        <!-- - The submit button's text should say "Buy Now!"-->
+        <button type="submit">Buy Now!</button>
+    </form>
+</body>
+</html>
