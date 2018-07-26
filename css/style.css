@@ -1,0 +1,169 @@
+/*/.fancy-header {*/
+    /*color: purple; !* single line comment *!*/
+    /*text-decoration: underline;*/
+/*}*/
+
+/*Center the main heading*/
+/*Add a style to change the color of the headers on your page and make them underlined.*/
+
+header {
+    background-color: rgba(0, 0, 0, 0.73);
+    padding: 3px;
+    border: 3px solid black;
+
+}
+
+h1 {
+    text-align: center;
+    color: #FFF;
+    text-decoration: underline;
+    font-style: normal;
+    font-size: 4em;
+}
+
+.slogan {
+    text-align: center;
+    color: #F0F0F0;
+    font-size: medium;
+    font-style: italic;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.float-left{
+    float: left;
+}
+
+.float-right{
+    float: right;
+}
+
+.float-center {
+    position: relative;
+    left: 30%;
+
+}
+
+.float-center2 {
+    position: relative;
+    left: 42%;
+
+}
+
+.float-center3 {
+    position: relative;
+    left: 45%;
+
+}
+
+.float-center4 {
+    position: relative;
+    left: 40%;
+
+}
+.text-right {
+    text-align: right;
+}
+
+body {
+    /*Add a style to change the background color of the page.*/
+    background-color: rgba(10, 19, 13, 0.85);
+
+    /*Add a style to add a background image to your background. Search how to manipulate the position, sizing of this background image.*/
+    background-image: url(https://images.pexels.com/photos/132340/pexels-photo-132340.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    /*Add a style to change the font for the entire page. Use google fonts if you would like.*/
+    font-family: 'Old Standard TT', serif;
+    color: #FFF;
+
+}
+
+h2 {
+    color: #ffa200;
+    text-decoration: underline;
+}
+
+table>h2 {
+    text-align: right;
+}
+/*Add a style to change the list-style to something other than the default bullet.*/
+ul {
+    list-style-type: square;
+}
+
+ol {
+    list-style: upper-roman;
+}
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/*Add a style to change the table, table cells td and rows tr padding and font sizes.*/
+.collage {
+    padding: 0;
+    border: 0;
+}
+
+.products>table {
+    table-layout: fixed;
+    color: #72dbfb;
+    border-collapse: collapse;
+    border: 1px solid white;
+}
+
+.collage>table {
+    table-layout: auto;
+    border-collapse: collapse;
+}
+
+.values {
+    width:auto;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.73);
+}
+
+tr, th, td {
+    border: 1px solid white;
+}
+th {
+    font-size: large;
+    border: 3px solid white;
+
+}
+
+td  {
+    font-size: small;
+}
+
+tr:not(:first-child):hover {
+    color: #FFF;
+    font-size: large;
+    font-style: italic;
+}
+
+
+/*Add a style to alter the anchor tags and its different states. (e.g. link, visited, hover and active).*/
+
+a:hover{
+    color: #edf003;
+}
+
+a:visited{
+    color: #ff1e43;
+}
+
+a:link{
+    color: #33ff0b;
+}
+
+a:active{
+    color: #2a57ff;
+}
+/*Continue experimenting with styles to increase the visual appeal of the page.*/
