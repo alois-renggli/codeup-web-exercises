@@ -2,18 +2,25 @@ body {
     width: 95%;
     margin: 2em;
     font-family: Futura;
+    background-color: #a5966a;
 }
 header {
     text-align: center;
     margin-bottom: 1em;
 }
-
+body>div {
+    background-color: rgba(242, 245, 215, 0.57);
+    border: .2em solid black;
+    padding: .5em;
+}
 header p{
     margin: 0 auto;
     border: none;
     padding: none;
 }
-
+hr {
+    border-color: rgba(44, 43, 41, 0.72);
+}
 h1 {
     margin-bottom: .5em;
     font-size: xx-large;
@@ -23,7 +30,7 @@ a:link {
     font-style: normal;
 }
 a:visited {
-    color: #808080;
+    color: #4b4b4b;
     font-style: normal;
 }
 a:hover {
