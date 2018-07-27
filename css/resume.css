@@ -1,0 +1,71 @@
+body {
+    width: 95%;
+    margin: 2em;
+    font-family: Futura;
+}
+header {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+header p{
+    margin: 0 auto;
+    border: none;
+    padding: none;
+}
+
+h1 {
+    margin-bottom: .5em;
+    font-size: xx-large;
+}
+a:link {
+    color: #0000FF;
+    font-style: normal;
+}
+a:visited {
+    color: #808080;
+    font-style: normal;
+}
+a:hover {
+    color: #FF0000;
+    font-style: italic;
+}
+ul {
+    list-style: square;
+}
+.list1 {
+    float: left;
+    margin-top: 5px;
+    width: 25%;
+    height: 100%;
+}
+.list2 {
+    float: left;
+    margin-top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.clear {
+    clear: left;
+}
+
+strong {
+    text-decoration: underline;
+    font-size: large;
+}
+
+.no-margin {
+    margin: 0 auto;
+}
+
+.top-margin {
+    margin-top: 1em;
+    margin-bottom: 0;
+}
+
+.bottom-margin {
+    margin-bottom: 1em;
+    margin-top: 0;
+}
+
