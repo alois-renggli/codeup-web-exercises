@@ -1,0 +1,76 @@
+body {
+    margin: 0 auto;
+}
+
+
+/*Create a file named grid-layout.html and a file named grid-layout.css.*/
+/*Make sure your page uses border-box sizing.*/
+.container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+}
+
+/*Build your own grid layout using the examples above.*/
+
+.row {
+    width:100%;
+    margin: 0 auto;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+    margin: 0 auto;
+}
+
+
+/*Create column class for one-half, one-third, one-fourth, one-sixth and one-eighth.*/
+
+.column {
+    float: left;
+    padding: 10px;
+    border: .5px solid black;
+
+}
+
+.one-half {
+    width: 50%;
+    /*border: 1px solid black;*/
+
+}
+
+.one-third {
+    width: calc(33.33% - 2em);
+    border: 1px solid black;
+
+}
+
+.one-fourth{
+    width: calc(25% - 2em);
+    border: 1px solid black;
+
+}
+
+.one-sixth {
+    width: calc(16.67% - 1px);
+    border: 1px solid black;
+
+}
+
+.one-eigth {
+    width: calc(12.5% - 1px);
+    border: 1px solid black;
+
+}
+
+@media screen and (max-width:400px) {
+    .one-half, .one-third, .one-fourth, .one-sixth, .one-eigth{
+        width: 100%;
+    }
+
+}
+/*Add the necessary CSS so that your columns take up the full width on small screens.*/
+/*Add borders and background colors to your column classes so that you can see the difference between each class.*/
+/*Have at least one row that includes three different column classes*/
