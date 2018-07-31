@@ -75,7 +75,7 @@ a {
 }
 .profile-details{
     float: left;
-    width: calc(24% - .5em);
+    width: calc(25% - 1em);
     margin: 0 .5em;
 }
 .profile-entry {
@@ -119,11 +119,11 @@ a {
 }
 .timeline{
     float: left;
-    width: calc(49% - .5em);
+    width: calc(50% - 1em);
     margin: 0 .5em;
 }
 .who-to-follow{
     float: left;
-    width: calc(24% - .5em);
+    width: calc(25% - 1em);
     margin: 0 .5em;
 }

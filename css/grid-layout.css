@@ -8,7 +8,6 @@ body {
 .container {
     margin: 0 auto;
     width: 100%;
-    max-width: 100%;
 }
 
 /*Build your own grid layout using the examples above.*/
@@ -22,16 +21,20 @@ body {
     content: "";
     display: table;
     clear: both;
-    margin: 0 auto;
+    margin: 1em 0;
 }
 
 
 /*Create column class for one-half, one-third, one-fourth, one-sixth and one-eighth.*/
 
 .column {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     float: left;
     padding: 10px;
-    border: .5px solid black;
+    border: 1px solid black;
+    background-color: #e1e1e1;
 
 }
 
@@ -42,26 +45,22 @@ body {
 }
 
 .one-third {
-    width: calc(33.33% - 2em);
-    border: 1px solid black;
+    width: 33.33%;
 
 }
 
 .one-fourth{
-    width: calc(25% - 2em);
-    border: 1px solid black;
+    width: 25%;
 
 }
 
 .one-sixth {
-    width: calc(16.67% - 1px);
-    border: 1px solid black;
+    width: 16.67%;
 
 }
 
 .one-eigth {
-    width: calc(12.5% - 1px);
-    border: 1px solid black;
+    width: 12.5%;
 
 }
 

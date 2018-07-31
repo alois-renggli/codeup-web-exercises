@@ -2,14 +2,22 @@ body {
     font-family: sans-serif;
 }
 
-img{
-    width: 100%;
-    clear: both;
-}
+/*img{*/
+    /*width: 100%;*/
+    /*clear: both;*/
+/*}*/
 
 .header-img {
-    padding: 0;
-    margin: 0 auto;
+    margin-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    clear: both;
+
+}
+h2 {
+    margin-top: 0;
+    margin-bottom: 1em;
 }
 
 #social-media-links li{
@@ -28,11 +36,12 @@ footer {
 
 footer>p {
     float: left;
+    padding-left: .5em;
 }
 
 
 /*Styling for small screens*/
-@media screen and (max-width:399px){
+@media screen and (max-width:549px){
 
 .alert-info {
         background-color: #d6fefe;
@@ -50,7 +59,9 @@ body {
 }
 h1 {
     text-align: center;
+    margin-bottom: 2em;
 }
+
 .nav-links{
     list-style-type: none;
     padding: 0;
@@ -76,10 +87,20 @@ li {
     margin: none;
 }
 
+img {
+    width: 339px;
+    height: 224px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    /*padding-left: .5em;*/
+
+}
+
 }
 
 /*Styling for large screens*/
-@media screen and (min-width:400px) {
+@media screen and (min-width:550px) {
 
     .hidden-on-desktop {
         display: none;
@@ -88,13 +109,15 @@ li {
     .nav-links {
         float: right;
         list-style-type: none;
-        margin: 20px 0;
-        padding: 0;
+        margin-bottom: 2em;
+        padding-top: 2em;
     }
 
     h1 {
         float: left;
-        margin: 20px 0;
+        margin-top: 1em;
+        padding-left: .5em;
+        margin-bottom: 2em;
     }
 
     li {
@@ -105,20 +128,44 @@ li {
     }
 
     .main {
-        width: calc(60% - 1em);
+        width: calc(55% - 1em);
         float: left;
         /*padding: 1em;*/
         overflow: auto;
-        margin: 0 auto;
+        margin: 0 0 2em 0;
+        padding: 1em;
     }
 
     .sub-section {
-        width: calc(30% - 1em);
+        width: calc(40% - 1em);
         float: right;
-        padding: 1em 0 1em 1em;
+        padding: 1em;
         overflow: auto;
         font-style: italic;
-        margin: 0 auto;
+        margin: 0 0 2em 0;
+    }
+    .sub-section p {
+        margin-top: 0;
+
+    }
+    .main p {
+        margin-top: 0;
+    }
+    img {
+        width: 890px;
+        height: 385px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .header-img {
+        padding: 0;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        clear: both;
+
     }
 
 }
