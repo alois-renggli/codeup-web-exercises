@@ -1,0 +1,68 @@
+.container {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.row {
+    width:100%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column {
+    float: left;
+    padding: 10px;
+    background-color: lightskyblue;
+    box-sizing: border-box;
+    border: 2px solid black;
+    overflow: auto;
+}
+.one-half {
+    width: 50%;
+}
+.one-third {
+    width: 33.33%;
+}
+
+.one-fourth {
+    width: 25%;
+}
+
+.one-fifth {
+    width: 20%;
+}
+
+.one-sixth {
+    width: 16.667%;
+}
+
+.one-eigth{
+    width: 12.5%;
+}
+
+.one-twelfth {
+    width: 8.333%;
+}
+
+/*@media screen and (max-width:500px) {*/
+    /*!*.column.one-half, .column.one-third, .column.one-fourth, .column.one-fifth,*!*/
+/*!*.column.one-sixth, .column.one-eigth, .column.one-twelfth{*!*/
+        /*!*width: 100%;*!*/
+        /*!*}*!*/
+    /*[class* = "one-"] {*/
+        /*width: 100%;*/
+    /*}*/
+
+/*}*/
+
+@media only screen and (max-width: 500px) {
+    /* For mobile phones: */
+    [class*="one-"] {
+        width: 100%;
+    }
+}
