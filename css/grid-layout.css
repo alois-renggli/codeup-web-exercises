@@ -38,6 +38,10 @@ body {
 
 }
 
+.one {
+    width: 100%;
+}
+
 .one-half {
     width: 50%;
 
@@ -62,13 +66,23 @@ body {
     width: 12.5%;
 
 }
-
+.one-twelfth {
+    width: 8.333%;
+}
 .two-third {
     width: 66.667%;
 }
 
 .three-eighth {
     width: 37.5%;
+}
+
+.three-fourths {
+    width: 75%;
+}
+
+.five-sixths {
+    width: 83.333%;
 }
 
 /*@media screen and (max-width:400px) {*/
@@ -80,19 +94,26 @@ body {
 @media only screen and (max-width: 500px) {
     /* For mobile phones: */
 
-    footer>p {
-        width: 50%;
-        float: left;
-    }
-
-    footer>div {
-        width: 50%;
-        float: right;
-    }
 
     [class*="one-"]{
         width: 100%;
     }
+
+    [class*="two-"]{
+        width: 100%;
+    }
+
+    [class*="three-"]{
+        width: 100%;
+    }
+    [class*="five-"]{
+        width: 100%;
+    }
+
+    footer>.one-half {
+    !important;width: 50%;
+    }
+
 
 }
 /*Add the necessary CSS so that your columns take up the full width on small screens.*/
