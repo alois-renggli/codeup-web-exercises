@@ -8,3 +8,5 @@ h1 {
     position: absolute;
     top: calc(50% - .75em);
 }
+
+$enable-gradients: true;
