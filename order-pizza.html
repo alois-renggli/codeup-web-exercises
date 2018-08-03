@@ -75,7 +75,7 @@
 
         <div class="card card-border-secondary mb-3">
 
-            <div class="card-header bg-primary .bg-gradient-warning text-white mb-3">Choose size and crust</div>
+            <div class="card-header bg-blue text-blue mb-3">Choose size and crust</div>
 
             <div class="card-body list-group list-group-flush pt-0 pb-0 pl-3 pr-3">
 
@@ -85,8 +85,8 @@
                     <div class="card-header">Hand Tossed</div>
                     <div class="card-body p-0">
                         <ul class="list-group">
-                            <li class="list-group-item align-middle">
-                                Garlic seasoned crust with a rich, buttery taste.
+                            <li class="list-group-item align-middle bg-white">
+                                Garlic-seasoned crust with a rich, buttery taste.
                             </li>
                             <li class="list-group-item">
                                 <input type="radio" id="small-10" name="crust">
@@ -100,13 +100,13 @@
                     </div>
                 </div>
 
-                <!--Second Card for Crispy Thin-->
+                <!--Second Card for Crispy Thin Crust-->
 
                 <div class="card border-secondary mx-auto mb-3 p-0 container-fluid">
-                    <p class="card-header">Crispy Thin</p>
+                    <p class="card-header">Crispy thin crust</p>
                     <div class="card-body p-0">
                         <ul class="list-group">
-                            <li class="list-group-item">
+                            <li class="list-group-item bg-white">
                                 Thin enough for optimum crispy to crunchy ratio.
                             </li>
 
@@ -116,7 +116,7 @@
                             </li>
 
                             <li class="list-group-item container-fluid">
-                                <input type="radio" id="large-14" name="crust">
+                                <input type="radio" id="large-14" name="crust" class="btn-primary">
                                 <label for="large-14">Large (14")</label>
                             </li>
                         </ul>
@@ -128,7 +128,9 @@
 
             <div class="text-right bg-light container-fluid list-group-item">
                 <!--<button type="submit">Next Step</button>-->
-                <a href="#" class="btn btn-primary">Next Step ></a>
+                <a href="#" class="btn btn-primary">Next Step <i class="fas fa-caret-right"></i>
+
+                </a>
             </div>
         </div>
 
@@ -137,7 +139,7 @@
 
         <div class="card card-border-secondary mb-3">
 
-            <div class="card-header bg-primary text-white mb-3">Choose Cheese and Sauce</div>
+            <div class="card-header bg-blue text-blue mb-3">Choose Cheese and Sauce</div>
 
             <div class="card-body list-group list-group-flush pt-0 pb-0 pl-3 pr-3">
 
@@ -148,10 +150,10 @@
                     <div class="card-body p-0">
                         <ul class="list-group">
                             <li class="list-group-item form-group pl-3 pr-3">
-                                <label for="cheese">How Much?</label>
+                                <label for="cheese">Cheese</label>
                                 <select name="cheese" id="cheese" class="form-control">
-                                    <option value="Light">Light</option>
-                                    <option value="Normal" selected>Normal</option>
+                                    <option value="Light" selected>Light</option>
+                                    <option value="Normal">Normal</option>
                                     <option value="Extra">Extra</option>
                                     <option value="Double">Double</option>
                                 </select>
@@ -163,14 +165,14 @@
                 <!--Card for Sauce-->
 
                 <div class="card border-secondary mx-auto mb-3 p-0 container-fluid">
-                    <p class="card-header">Sauce</p>
+                    <p class="card-header">Sauce?</p>
                     <div class="card-body p-0">
                         <ul class="list-group">
                             <li class="list-group-item form-group pl-3 pr-3">
-                                <label for="sauce">How Much?</label>
+                                <label for="sauce">Sauce</label>
                                 <select name="sauce" id="sauce" class="form-control">
-                                    <option value="tomato_sauce">Tomato sauce</option>
-                                    <option value="marinara_sauce" selected>Marinara sauce</option>
+                                    <option value="tomato_sauce" selected>Robust Inspired Tomato sauce</option>
+                                    <option value="marinara_sauce">Marinara sauce</option>
                                     <option value="bbq_sauce">BBQ Sauce</option>
                                     <option value="alfredo_sauce">Alfredo Sauce</option>
                                 </select>
@@ -178,8 +180,8 @@
                             <li class="list-group-item form-group pl-3 pr-3">
                                 <label for="sauce_quantity">How Much?</label>
                                 <select name="sauce_quantity" id="sauce_quantity" class="form-control">
-                                    <option value="Light">Light</option>
-                                    <option value="Normal" selected>Normal</option>
+                                    <option value="Light" selected>Light</option>
+                                    <option value="Normal">Normal</option>
                                     <option value="Extra">Extra</option>
                                 </select>
                             </li>
@@ -190,8 +192,8 @@
             <!--Button for Previous and Next Step-->
             <div class="text-right bg-light list-group-item" role="group">
                 <div class="btn-group">
-                    <button href="#" class="btn btn-primary" type="button">< Previous Step</button>
-                    <button href="#" class="btn btn-primary" type="button">Next Step ></button>
+                    <button href="#" class="btn btn-primary" type="button"><i class="fas fa-caret-left"></i> Previous Step</button>
+                    <button href="#" class="btn btn-primary" type="button">Next Step <i class="fas fa-caret-right"></i></button>
                 </div>
             </div>
         </div>
@@ -200,7 +202,7 @@
         <!--Card for Choose Toppings-->
         <div class="card card-border-secondary">
 
-            <div class="card-header bg-primary text-white mb-3">Choose Toppings</div>
+            <div class="card-header bg-blue text-blue mb-3">Choose Toppings</div>
 
             <div class="card-body list-group list-group-flush pt-0 pb-0 pl-3 pr-3">
 
@@ -208,23 +210,31 @@
 
                 <div class="card border-secondary container-fluid mx-auto mb-3 p-0 ">
                     <div class="card-header">Choose Meats</div>
-                    <div class="card-body p-0">
+                    <div class="card-body p-0 ">
                         <ul class="list-group">
                             <li class="list-group-item">
-                                <input type="checkbox" id="beef" name="beef">
-                                <label for="beef"> Beef</label>
+                                <div class="custom-checkbox custom-control">
+                                    <input type="checkbox" id="beef" name="beef" class="custom-control-input">
+                                    <label for="beef" class="custom-control-label"> Beef</label>
+                                </div>
                             </li>
                             <li class="list-group-item">
-                                <input type="checkbox" id="ham" name="ham">
-                                <label for="ham"> Ham</label>
+                                <div class="custom-checkbox custom-control">
+                                    <input type="checkbox" id="ham" name="ham" class="custom-control-input">
+                                    <label for="ham" class="custom-control-label"> Ham</label>
+                                </div>
                             </li>
                             <li class="list-group-item">
-                                <input type="checkbox" id="philly" name="philly">
-                                <label for="philly"> Philly Steak</label>
+                                <div class="custom-checkbox custom-control">
+                                    <input type="checkbox" id="philly" name="philly" class="custom-control-input">
+                                    <label for="philly" class="custom-control-label"> Philly Steak</label>
+                                </div>
                             </li>
                             <li class="list-group-item">
-                                <input type="checkbox" id="bacon" name="bacon">
-                                <label for="bacon"> Bacon</label>
+                                <div class="custom-checkbox custom-control">
+                                    <input type="checkbox" id="bacon" name="bacon" class="custom-control-input">
+                                    <label for="bacon" class="custom-control-label"> Bacon</label>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -237,20 +247,30 @@
                     <div class="card-body p-0">
                         <ul class="list-group">
                             <li class="list-group-item">
-                                <input type="checkbox" id="green" name="green">
-                                <label for="green"> Green Peppers</label>
+                                <div class="custom-checkbox custom-control">
+                                    <input type="checkbox" id="green" name="green" class="custom-control-input">
+                                    <label for="green" class="custom-control-label"> Green Peppers</label>
+                                </div>
+
                             </li>
                             <li class="list-group-item">
-                                <input type="checkbox" id="mushroom" name="mushroom">
-                                <label for="mushroom"> Mushrooms</label>
+                                <div class="custom-checkbox custom-control">
+                                    <input type="checkbox" id="mushroom" name="mushroom" class="custom-control-input">
+                                    <label for="mushroom" class="custom-control-label"> Mushrooms</label>
+                                </div>
+
                             </li>
                             <li class="list-group-item">
-                                <input type="checkbox" id="onion" name="onion">
-                                <label for="onion"> Onions</label>
+                                <div class="custom-checkbox custom-control">
+                                    <input type="checkbox" id="onion" name="onion" class="custom-control-input">
+                                    <label for="onion" class="custom-control-label"> Onions</label>
+                                </div>
                             </li>
                             <li class="list-group-item">
-                                <input type="checkbox" id="jalapeno" name="jalapeno">
-                                <label for="jalapeno"> Jalapenos</label>
+                                <div class="custom-checkbox custom-control">
+                                    <input type="checkbox" id="jalapeno" name="jalapeno" class="custom-control-input">
+                                    <label for="jalapeno" class="custom-control-label"> Jalapenos</label>
+                                </div>
                             </li>
                         </ul>
                     </div>

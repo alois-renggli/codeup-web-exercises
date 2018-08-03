@@ -9,4 +9,28 @@ h1 {
     top: calc(50% - .75em);
 }
 
-$enable-gradients: true;
+.bg-blue {
+    background-color: #ddedf6;
+}
+
+.text-blue {
+    color: #6c92aa;
+}
+
+label {
+    color: #6c92aa;
+
+}
+
+.list-group-item {
+    background-color: #ddedf6;
+
+}
+
+.card-border-secondary {
+    border-color: #c8e8f0;
+}
+
+.btn-primary {
+    background-color: #4679b2;
+}
