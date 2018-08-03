@@ -50,7 +50,7 @@
 
         <div class="jumbotron jumbotron-fluid d-none d-md-block p-0 m-0">
             <h1 class="display-3 w-100 text-center">Welcome to Pizza World!</h1>
-            <img src="images/pizza.png" alt="" class="w-100 media">
+            <img src="images/pizza.png" alt="" class="w-100">
         </div>
 
         <h2 class="mt-3 mb-3 pl-0">Build Your Own Pizza!</h2>
@@ -60,13 +60,13 @@
         <div class="navbar navbar-expand-md navbar-light bg-light p-0">
             <ul class="nav nav-tabs mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#"> <span class="badge badge-secondary">1</span> Size and Crust</a>
+                    <a class="nav-link active bg-light" href="#crust"> <span class="badge badge-secondary">1</span> Size and Crust</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"> <span class="badge badge-secondary">2</span> Cheese and Sauce</a>
+                    <a class="nav-link active bg-light" href="#cheese"> <span class="badge badge-secondary">2</span> Cheese and Sauce</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><span class="badge badge-secondary">3</span> Toppings</a>
+                    <a class="nav-link active bg-light" href="#topping"><span class="badge badge-secondary">3</span> Toppings</a>
                 </li>
             </ul>
         </div>
@@ -75,7 +75,7 @@
 
         <div class="card card-border-secondary mb-3">
 
-            <div class="card-header bg-blue text-blue mb-3">Choose size and crust</div>
+            <div class="card-header bg-blue text-blue mb-3" id="crust">Choose size and crust</div>
 
             <div class="card-body list-group list-group-flush pt-0 pb-0 pl-3 pr-3">
 
@@ -89,12 +89,16 @@
                                 Garlic-seasoned crust with a rich, buttery taste.
                             </li>
                             <li class="list-group-item">
-                                <input type="radio" id="small-10" name="crust">
-                                <label for="small-10"> Small (10")</label>
+                                <div class="custom-radio custom-control">
+                                    <input type="radio" id="small-10" name="crust" class="custom-control-input">
+                                    <label for="small-10" class="custom-control-label"> Small (10")</label>
+                                </div>
                             </li>
                             <li class="list-group-item">
-                                <input type="radio" id="medium-12" name="crust">
-                                <label for="medium-12"> Medium (12")</label>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="medium-12" name="crust" class="custom-control-input">
+                                    <label for="medium-12" class="custom-control-label"> Medium (12")</label>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -110,14 +114,18 @@
                                 Thin enough for optimum crispy to crunchy ratio.
                             </li>
 
-                            <li class="list-group-item container-fluid">
-                                <input type="radio" id="medium-12c" name="crust">
-                                <label for="medium-12c">Medium (12")</label>
+                            <li class="list-group-item">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="medium-12c" name="crust" class="custom-control-input">
+                                    <label for="medium-12c" class="custom-control-label">Medium (12")</label>
+                                </div>
                             </li>
 
-                            <li class="list-group-item container-fluid">
-                                <input type="radio" id="large-14" name="crust" class="btn-primary">
-                                <label for="large-14">Large (14")</label>
+                            <li class="list-group-item">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="large-14" name="crust" class="custom-control-input">
+                                    <label for="large-14" class="custom-control-label">Large (14")</label>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -128,7 +136,7 @@
 
             <div class="text-right bg-light container-fluid list-group-item">
                 <!--<button type="submit">Next Step</button>-->
-                <a href="#" class="btn btn-primary">Next Step <i class="fas fa-caret-right"></i>
+                <a href="#cheese" class="btn btn-primary">Next Step <i class="fas fa-caret-right"></i>
 
                 </a>
             </div>
@@ -139,7 +147,7 @@
 
         <div class="card card-border-secondary mb-3">
 
-            <div class="card-header bg-blue text-blue mb-3">Choose Cheese and Sauce</div>
+            <div class="card-header bg-blue text-blue mb-3" id="cheese">Choose Cheese and Sauce</div>
 
             <div class="card-body list-group list-group-flush pt-0 pb-0 pl-3 pr-3">
 
@@ -192,8 +200,8 @@
             <!--Button for Previous and Next Step-->
             <div class="text-right bg-light list-group-item" role="group">
                 <div class="btn-group">
-                    <button href="#" class="btn btn-primary" type="button"><i class="fas fa-caret-left"></i> Previous Step</button>
-                    <button href="#" class="btn btn-primary" type="button">Next Step <i class="fas fa-caret-right"></i></button>
+                    <a href="#crust" class="text-white"><button class="btn btn-primary" type="button"><i class="fas fa-caret-left"></i> Previous Step</button></a>
+                    <a href="#topping" class="text-white"><button class="btn btn-primary" type="button">Next Step <i class="fas fa-caret-right"></i></a></button>
                 </div>
             </div>
         </div>
@@ -202,7 +210,7 @@
         <!--Card for Choose Toppings-->
         <div class="card card-border-secondary">
 
-            <div class="card-header bg-blue text-blue mb-3">Choose Toppings</div>
+            <div class="card-header bg-blue text-blue mb-3" id="topping">Choose Toppings</div>
 
             <div class="card-body list-group list-group-flush pt-0 pb-0 pl-3 pr-3">
 
