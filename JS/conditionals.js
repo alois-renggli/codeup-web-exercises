@@ -77,7 +77,7 @@ function analyzeColor (colorName) {
     }
 }
 
-console.log(analyzeColor(colorName));
+// console.log(analyzeColor(randomColor));
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -91,16 +91,16 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message everytime you refresh the page
  */
-    // console.log(randomColor);
-    // console.log(analyzeColor(randomColor));
+    console.log(randomColor);
+    console.log(analyzeColor(randomColor));
 
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
 
-var colorName = prompt("Enter the name of a color...")
-alert("You selected " + colorName)
+var selectColor = prompt("Enter the name of a color...")
+alert("You selected " + selectColor)
 
 function analyzeColor(colorName){
     switch (colorName){
@@ -119,7 +119,7 @@ function analyzeColor(colorName){
     }
 }
 
-alert(analyzeColor(colorName));
+alert(analyzeColor(selectColor));
 
 
 /**
