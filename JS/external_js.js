@@ -1,12 +1,12 @@
 "use strict";
 
-// console.log("Hello from external JavaScript");
-//
-// alert("Welcome to my Website!");
-//
-// var favoriteColor = prompt("What is your favorite color?")
-// alert("Great, " + favoriteColor + " is my favorite color too!")
-//
+console.log("Hello from external JavaScript");
+
+alert("Welcome to my Website!");
+
+var favoriteColor = prompt("What is your favorite color?")
+alert("Great, " + favoriteColor + " is my favorite color too!")
+
 
 // Write some JavaScript code, that is, variables and operators, to describe the following scenarios.
 // Do not worry about the real operations to get the values, the goal of these exercises is to understand how

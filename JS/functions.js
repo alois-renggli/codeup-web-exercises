@@ -21,7 +21,7 @@
  *
  * console.log 'helloMessage' to check your work
  */
-    var helloMessage = sayHello("Alois");
+    var helloMessage = sayHello("Louie");
     console.log(helloMessage);
 
 /**
@@ -60,7 +60,7 @@ var random = Math.floor((Math.random() * 3) + 1);
  */
 
     function isTwo(number) {
-    if (number == 2) {
+    if (number === 2) {
         return(true + " The random number is " + number);
     }
     else {
@@ -81,11 +81,12 @@ var random = Math.floor((Math.random() * 3) + 1);
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 
-    function calculateTip() {
-        var billCost = prompt("Enter the cost of the bill...");
-        var tipPercent = prompt("Enter the tip percentage...");
-        var tipCost = (parseFloat(tipPercent) / 100) * parseFloat(billCost);
-        return("The tip of " + tipPercent + "% for the bill total of $" + billCost + " is $" + tipCost.toFixed(2));
+
+function calculateTip() {
+    var billCost = prompt("Enter the cost of the bill...");
+    var tipPercent = prompt("Enter the tip percentage...");
+    var tipCost = (parseFloat(tipPercent) / 100) * parseFloat(billCost);
+    return("The tip of " + tipPercent + "% for the bill total of $" + billCost + " is $" + tipCost.toFixed(2));
 
 }
 
@@ -114,6 +115,7 @@ var random = Math.floor((Math.random() * 3) + 1);
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+
 
 
 function applyDiscount (){

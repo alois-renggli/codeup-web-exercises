@@ -3,7 +3,8 @@
 /**
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
- * would like to enter a number. If they click 'Ok', prompt the user for a
+ * would like to enter a number.
+ * If they click 'Ok', prompt the user for a
  * number, then use 3 separate alerts to tell the user:
  *
  * - whether the number is even or odd
@@ -15,6 +16,31 @@
  *
  * Can you refactor your code to use functions?
  */
+
+
+var enterNumber = confirm("Would you like to enter a number?");
+
+if (enterNumber === true){
+    var number = prompt("Please enter a number...")
+    alert("You entered " + number)
+}
+
+if (number%2 === 0){
+    alert(number + " is even.")
+}
+else {
+    alert(number + " is odd.")
+}
+
+alert(number + " plus 100 is " + (parseFloat(number) + 100))
+
+if (number >= 0){
+    alert(number + " is positive.")
+}
+else {
+    alert(number + " is negative.")
+}
+
 
 /* ########################################################################## */
 
@@ -35,6 +61,23 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
+//
+function analyzeColor (colorName) {
+    if (colorName === "blue"){
+        return("Blue is the color of the sky.")
+    }
+    else if (colorName === "red"){
+        return("Red is the color of strawberries.")
+    }
+    else if (colorName === "cyan"){
+        return("I don't know anything about cyan.")
+    }
+    else {
+        return("I can't think of anything that has that color.")
+    }
+}
+
+console.log(analyzeColor(colorName));
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -48,11 +91,36 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message everytime you refresh the page
  */
+    // console.log(randomColor);
+    // console.log(analyzeColor(randomColor));
 
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
+
+var colorName = prompt("Enter the name of a color...")
+alert("You selected " + colorName)
+
+function analyzeColor(colorName){
+    switch (colorName){
+        case "blue":
+            return("Blue is the color of the sky.");
+            break;
+        case "red":
+            return("Red is the color of strawberries.");
+            break;
+        case "cyan":
+            return("I don't know anything about cyan.");
+            break;
+        default:
+            return("I don't know anything by that color.");
+            break;
+    }
+}
+
+alert(analyzeColor(colorName));
+
 
 /**
  * TODO:
@@ -83,6 +151,52 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * return value.
  */
 
+//modified random number for 0-5 for the dicount..
+// var random = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
+
+var totalAmount = prompt("Enter the total amount of your Walmart bill...");
+
+alert("Your lucky number is " + luckyNumber);
+// var randomNumber = prompt("Enter a number from 0-5:")
+function calculateTotal(luckyNumber, totalAmount){
+
+    switch (luckyNumber) {
+        case 0:
+            var discount = 0;
+            var discountedPrice = parseFloat(totalAmount) - (discount * totalAmount);
+            return (discountedPrice.toFixed(2));
+            break;
+        case 1:
+            var discount = .10;
+            var discountedPrice = parseFloat(totalAmount) - (discount * totalAmount);
+            return (discountedPrice.toFixed(2));
+            break;
+        case 2:
+            var discount = 0.25;
+            var discountedPrice = parseFloat(totalAmount) - (discount * totalAmount);
+            return (discountedPrice.toFixed(2));
+            break;
+        case 3:
+            var discount = 0.35;
+            var discountedPrice = parseFloat(totalAmount) - (discount * totalAmount);
+            return (discountedPrice.toFixed(2));
+            break;
+        case 4:
+            var discount = 0.5;
+            var discountedPrice = parseFloat(totalAmount) - (discount * totalAmount);
+            return (discountedPrice.toFixed(2));
+            break;
+        case 5:
+            var discount = 1.0;
+            var discountedPrice = parseFloat(totalAmount) - (discount * totalAmount);
+            return (discountedPrice.toFixed(2));
+            break;
+    }
+}
+// console.log(calculateTotal(random, totalAmount));
+// var discount = calculateTotal(random, totalAmount);
+alert("Your bill was $" + totalAmount + " and your lucky number was " + luckyNumber +". Your discounted bill is $" + calculateTotal(luckyNumber, totalAmount));
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
