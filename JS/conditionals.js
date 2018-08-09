@@ -164,32 +164,32 @@ function calculateTotal(luckyNumber, totalAmount){
     switch (luckyNumber) {
         case 0:
             var discount = 0;
-            var discountedPrice = parseFloat(totalAmount) - (discount * totalAmount);
+            var discountedPrice = totalAmount - (discount * totalAmount);
             return (discountedPrice.toFixed(2));
             break;
         case 1:
             var discount = .10;
-            var discountedPrice = parseFloat(totalAmount) - (discount * totalAmount);
+            var discountedPrice = totalAmount - (discount * totalAmount);
             return (discountedPrice.toFixed(2));
             break;
         case 2:
             var discount = 0.25;
-            var discountedPrice = parseFloat(totalAmount) - (discount * totalAmount);
+            var discountedPrice = totalAmount - (discount * totalAmount);
             return (discountedPrice.toFixed(2));
             break;
         case 3:
             var discount = 0.35;
-            var discountedPrice = parseFloat(totalAmount) - (discount * totalAmount);
+            var discountedPrice = totalAmount - (discount * totalAmount);
             return (discountedPrice.toFixed(2));
             break;
         case 4:
             var discount = 0.5;
-            var discountedPrice = parseFloat(totalAmount) - (discount * totalAmount);
+            var discountedPrice = totalAmount - (discount * totalAmount);
             return (discountedPrice.toFixed(2));
             break;
         case 5:
             var discount = 1.0;
-            var discountedPrice = parseFloat(totalAmount) - (discount * totalAmount);
+            var discountedPrice = totalAmount - (discount * totalAmount);
             return (discountedPrice.toFixed(2));
             break;
     }
