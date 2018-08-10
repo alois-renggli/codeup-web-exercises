@@ -21,25 +21,30 @@
 var enterNumber = confirm("Would you like to enter a number?");
 
 if (enterNumber === true){
-    var number = prompt("Please enter a number...")
-    alert("You entered " + number)
-}
+    var number = prompt("Please enter a number...");
+    alert("You entered " + number);
+    if (number == parseFloat(number)) {
 
-if (number%2 === 0){
-    alert(number + " is even.")
-}
-else {
-    alert(number + " is odd.")
-}
+        if (number % 2 === 0) {
+            alert(number + " is even.")
+        } else {
+            alert(number + " is odd.")
+        }
 
-alert(number + " plus 100 is " + (parseFloat(number) + 100))
+        alert(number + " plus 100 is " + (parseFloat(number) + 100));
 
-if (number >= 0){
-    alert(number + " is positive.")
-}
-else {
-    alert(number + " is negative.")
-}
+        if (number >= 0) {
+            alert(number + " is positive.")
+        } else {
+            alert(number + " is negative.")
+        }
+    }else{
+        alert("You did not enter a valid number.")
+    }
+}else{
+   alert("A number was not requested.")}
+
+
 
 
 /* ########################################################################## */
