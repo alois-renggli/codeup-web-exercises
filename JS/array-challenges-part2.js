@@ -1,5 +1,36 @@
 "use strict";
 
+
+
+// Challenge #0
+// Define a function named countOccurences(array, item) that takes in two arguments.
+// The first argument is the array you want to search. the second argument is the value you wish to count.
+// if there are no occurences of the value in the array then return 0.
+// countOccurences (bugs, "ant") should return 3
+// countOccurences(fruits, "apple") should return 3
+// countOccurences(bugs, "mosquito") should return 2
+
+var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
+var fruits = ["apple", "banana", "apple", "orange", "apple", "pineapple"];
+
+
+function countOccurences(array, item){
+    var occurenceTotal = 0;
+    for (var i = 0; i <= array.length; i++){
+        if (array[i] === item){
+            occurenceTotal += 1;
+        }
+    }
+    console.log(occurenceTotal);
+    return occurenceTotal;
+}
+
+countOccurences(bugs, "ant");
+countOccurences(fruits, "apple");
+countOccurences(bugs, "mosquito");
+
+
+
 // Challenge #1:
 //
 // Define a function named allIndexesOf that takes in two arguments. The first argument should
@@ -13,7 +44,6 @@
 // allIndexesOf(fruits, "pineapple") should return [4]
 //
 
-var fruits = ["apple", "banana", "orange", "apple", "pineapple"];
 
 function allIndexesOf (arrayItem, value){
     var arrayItemIndex = [];
@@ -22,13 +52,16 @@ function allIndexesOf (arrayItem, value){
            arrayItemIndex.push(arrayItem.indexOf(value, i));
         }
     }
+    console.log(arrayItemIndex);
     return  arrayItemIndex;
 
 }
 
-console.log(allIndexesOf(fruits, "apple"));
-console.log(allIndexesOf(fruits, "guava"));
-console.log(allIndexesOf(fruits, "pineapple"));
+allIndexesOf(fruits, "apple");
+allIndexesOf(fruits, "guava");
+allIndexesOf(fruits, "pineapple");
+allIndexesOf(bugs, "ant");
+
 
 
 
@@ -49,8 +82,6 @@ console.log(allIndexesOf(fruits, "pineapple"));
 // removeAll(bugs, "roach") should return the original array b/c "roach" has no occurrences.
 //
 
-var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
-
 function removeAll(array, value){
 
     while (array.indexOf(value) >= 0) {
@@ -64,6 +95,8 @@ function removeAll(array, value){
 }
 
 removeAll(bugs, "ant");
+
+
 // should return ["mosquito", "scorpion", "mosquito", "typo", "reference error", "type error"]
 
 // removeAll(bugs, "mosquito");
@@ -72,10 +105,11 @@ removeAll(bugs, "ant");
 // removeAll(bugs, "roach");
 // should return the original array b/c "roach" has no occurrences.
 
-var antsArray = ['ant','ant','ant','ant','ant','ant','ant','ant','ant']
+// var antsArray = ['ant','ant','ant','ant','ant','ant','ant','ant','ant']
+//
+// removeAll(antsArray, 'ant');
 
-removeAll(antsArray, 'ant');
-
+removeAll(fruits, "apple");
 
 
 
