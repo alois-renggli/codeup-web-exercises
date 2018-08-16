@@ -159,6 +159,56 @@ console.log(listOfRollsFromDieFunc(20, twoDice));
 
 
 
+//Coding Challenges
+console.log("----------------------Coding Challenges----------------------")
+
+
+console.log("----------------------Sum of Squares----------------------")
+
+
+function sumOfSquare(a, b, c){
+    if (Math.pow(a,2)+Math.pow(b,2)===Math.pow(c,2)){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+console.log(sumOfSquare(3, 4, 5));
+console.log(sumOfSquare(4,5,6));
+
+
+
+
+
+
+console.log("----------------------Longest Word in Sentence----------------------")
+
+function wordLength (input){
+    var arrayInput = [];
+    arrayInput = input.split(" ");
+    var wordLength = [];
+
+    arrayInput.forEach(
+        function (element) {
+            var wordSplit = [];
+            if ((element === arrayInput[0]) || (element === arrayInput[arrayInput.length - 1])){
+                wordSplit = element.split('');
+                var num = wordSplit.length;
+                wordLength.push(num);
+            }else {
+                wordSplit = element.split('');
+                var num = wordSplit.length;
+                wordLength.push(num);
+            }
+        }
+    )
+    console.log(wordLength);
+    return Math.max(...wordLength);
+}
+
+
+console.log(wordLength("1234567890 is a test 12345678 case for 123456789"));
 
 
 
@@ -166,12 +216,30 @@ console.log(listOfRollsFromDieFunc(20, twoDice));
 
 
 
+console.log("----------------------Title Case----------------------")
 
+function titleCase (input){
+    input.toLowerCase();
+    var arrayTitle = [];
+    arrayTitle = input.split(" ");
+    var output = [];
+    arrayTitle.forEach(
 
+        function (element) {
+            element = element.toLowerCase();
+            var arrayWord = [];
+            arrayWord = element.split("");
+            arrayWord[0] = arrayWord[0].toUpperCase();
+            element = arrayWord.join("");
+            output.push(element);
+            console.log(element);
+        }
+    )
+    input = output.join(" ");
+    return input;
 
-
-
-
+}
+console.log(titleCase("THIS is A tESt FoR title CASE."));
 
 
 
