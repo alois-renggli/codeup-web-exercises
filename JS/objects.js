@@ -34,7 +34,7 @@
      */
     console.log("----------------Say Hello-----------------");
 
-    person.sayHello = "Good morning " + person.firstName + " "+  person.lastName + "!";
+    person.sayHello = function (){console.log( "Good morning " + this.firstName + " "+  this.lastName + "!")};
 
     console.log(person.sayHello);
     console.log(person);
