@@ -26,8 +26,8 @@
 </p>
 
 <button id="btn1" type="button">Change Main Header</button>
-<button id="btn2" type="button">Change Sub Header</button>
-<button id="btn3" type="button">Change List Items</button>
+<button id="btn2" type="button">Change List Items</button>
+<button id="btn3" type="button">Change Sub Header</button>
 <button id="btn4" type="button">Change Subparagraphs</button>
 
 
@@ -51,19 +51,19 @@
         var subHeader = document.getElementById("sub-header");
 
         // TODO: Set the text color of subHeader to blue
-        var btn2 = document.getElementById("btn2");
+        var btn3 = document.getElementById("btn3");
         function changeSubHeader(event) {
             subHeader.style.color = "#00F";
         };
-        btn2.addEventListener("click",changeSubHeader, false);
+        btn3.addEventListener("click",changeSubHeader, false);
 
         // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName("li");
 
         // TODO: Set text color on every other list item to grey
         // TODO: Set text color of li with dbid = 1 to blue
-        var btn3 = document.getElementById("btn3");
-        btn3.addEventListener("click",listItemColors, false);
+        var btn2 = document.getElementById("btn2");
+        btn2.addEventListener("click",listItemColors, false);
 
         function listItemColors(event) {
             for (var i = 0; i < listItems.length; i++) {
