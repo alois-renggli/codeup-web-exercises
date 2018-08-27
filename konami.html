@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<script src="js/jquery-2.x-git.js"></script>
+<script>
+    "use strict";
+    var keyCodeArray=[];
+    var konamiCode = [ 38, 38, 40, 40, 37, 39, 37,39,66,65,13];
+        // {3, 8},
+        // {4, 0},
+        // {4, 0},
+        // {3, 7},
+        // {3, 9},
+        // {3, 7},
+        // {3, 9},
+        // {6, 6},
+        // {6, 5},
+        // {1, 3},
+    // ];
+
+  $(document).keyup(function(event) {
+      console.log(event.keyCode);
+      keyCodeArray.push(event.keyCode);
+      console.log(keyCodeArray);
+      if (JSON.stringify(keyCodeArray) === JSON.stringify(konamiCode)){
+          $("h1").text("You Have Added 30 Lives!!!!!");
+          $('body').css('background-color', 'orange');
+
+      };
+      return keyCodeArray;
+  });
+
+
+
+
+
+
+
+
+
+</script>
+
+
+<!--Allow the user to enter the Konami Code: "↑ ↑ ↓ ↓ ← → ← → b a enter" (the return key)-->
+<!--Find the matching sequence using the code above for each key in the Konami Code.-->
+<!--Don't worry about capital a or b just check for lowercase.-->
+<!--After the correct Konami Code sequence is inputted then the
+ enter key have the script alert the user: "You have added 30 lives! Other ideas:-->
+<!--Change the background screen.-->
+<!--Play a sound.-->
+<!--Be creative!-->
+<!--Happy Playing.-->
+</body>
+</html>
