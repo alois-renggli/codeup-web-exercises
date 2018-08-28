@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+    <style>
+        .title{
+            background-color: white;
+        }
+        .contra-paragraph{
+            font-size: 70px;
+            background-color: orange;
+            text-align: center;
+            height: 200px;
+            padding-top: 150px;
+            /*margin: 0 auto;*/
+            margin-top: 50px;
+        }
+        .contra-title{
+            color: white;
+            background-color: rgba(0, 0, 0, 0.22);
+            height: 100px;
+            text-align: right;
+            font-family: "Droid Serif";
+            font-size: 70px;
+            margin: 0 auto;
+        }
+        .contra-image{
+            padding-left: 5em;
+            padding-right: 5em;
+            background-image: url("images/contra-start-screen.jpg");
+            background-repeat: no-repeat;
+            background-color: black;
+            background-size: auto;
+            background-position: center-top;
+        }
+        h1{
+            position: absolute;
+        }
+        div{
+            position: relative;
+            font-size: 70px;
+        }
+    </style>
+</head>
+
+
+<body class="title">
+<div>
+    <p></p>
+</div>
+<h1>Konami Code</h1>
+<p></p>
+
+
+
+<script src="js/jquery-2.x-git.js"></script>
+<script>
+    "use strict";
+    var keyCodeArray=[];
+    var konamiCode = [ 38, 38, 40, 40, 37, 39, 37,39,66,65,13];
+
+    var timer = 4;
+  $(document).keyup(function(event) {
+      console.log(event.keyCode);
+
+          if (JSON.stringify(keyCodeArray) !== JSON.stringify(konamiCode)){
+              if (keyCodeArray.length < 11){
+                  keyCodeArray.push(event.keyCode);
+              }
+              else if (keyCodeArray.length >=11){
+                  keyCodeArray.push(event.keyCode);
+                  keyCodeArray.shift();
+              }
+          }
+
+          else{
+              // $('div').text("You Entered the Konami Code!!!");
+              $('h1').animate({
+                  left: '500px',
+                  opacity: '0.5',
+                  fontSize: '60px',
+                  color: 'red',
+              }, 'slow');
+              setTimeout(function(){
+                  $('div').text("");
+                  $('h1').animate({
+                      left: '500px',
+                      opacity: '0.5',
+                      fontSize: '60px',
+                      color: 'red',
+                  });
+
+
+              },3000);
+
+              setTimeout(function(){
+                  $('body').addClass('contra-image');
+                  for(var i = 0; i < timer; i++){
+                      $("p").text("You Have Added 30 Lives!!!!!");
+                      $('p').addClass("contra-paragraph").fadeIn(1500).fadeOut(1000);
+                      $('h1').addClass("contra-title").fadeIn(1500).fadeOut(1000).fadeIn(1500);
+                      // $('body').css('background-color', 'blue').fadeIn(1000).fadeOut(1000).fadeIn(1000);
+                      i++;
+                  };
+
+                  var snd1 = new Audio("sounds/Contra SFX (25).wav"); // buffers automatically when created
+                  var snd2 = new Audio("sounds/Contra Intro.mp3"); // buffers automatically when created
+                  var snd3 = new Audio("sounds/Contra - Jungle Theme.mp3"); // buffers automatically when created
+
+                  snd1.play();
+                  setTimeout(function(){
+                      snd1.pause();
+                      snd1.currentTime = 0;
+                  }, 5500);
+                  setTimeout(function(){
+                      snd2.play();
+                  }, 5500);
+              }, 3000);
+          }
+      console.log(keyCodeArray);
+      return keyCodeArray;
+  });
+
+
+
+
+
+
+
+
+
+</script>
+
+<!--Allow the user to enter the Konami Code: "↑ ↑ ↓ ↓ ← → ← → b a enter" (the return key)-->
+<!--Find the matching sequence using the code above for each key in the Konami Code.-->
+<!--Don't worry about capital a or b just check for lowercase.-->
+<!--After the correct Konami Code sequence is inputted then the
+ enter key have the script alert the user: "You have added 30 lives! Other ideas:-->
+<!--Change the background screen.-->
+<!--Play a sound.-->
+<!--Be creative!-->
+<!--Happy Playing.-->
+</body>
+</html>
