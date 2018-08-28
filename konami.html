@@ -2,35 +2,62 @@
 <html>
 <head>
     <title>Konami Code</title>
+    <style>
+        .title{
+            background-color: red;
+        }
+        .contra-paragraph{
+            font-size: 70px;
+            background-color: orange;
+            text-align: center;
+            height: 300px;
+            padding-top: 150px;
+            margin: 0 auto;
+        }
+        .contra-title{
+            color: white;
+            background-color: black;
+            border: 5px solid black;
+            height: 50px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .contra-image{
+            padding-left: 5em;
+            padding-right: 5em;
+            background-image: url("images/contra-start-screen.jpg");
+            background-repeat: no-repeat;
+            background-color: black;
+            background-size: auto;
+            background-position: center-top;
+        }
+    </style>
 </head>
-<body>
+<body class="title">
 <h1>Konami Code</h1>
+<p></p>
 
 <script src="js/jquery-2.x-git.js"></script>
 <script>
     "use strict";
     var keyCodeArray=[];
     var konamiCode = [ 38, 38, 40, 40, 37, 39, 37,39,66,65,13];
-        // {3, 8},
-        // {4, 0},
-        // {4, 0},
-        // {3, 7},
-        // {3, 9},
-        // {3, 7},
-        // {3, 9},
-        // {6, 6},
-        // {6, 5},
-        // {1, 3},
-    // ];
 
+    var timer = 100;
   $(document).keyup(function(event) {
       console.log(event.keyCode);
       keyCodeArray.push(event.keyCode);
       console.log(keyCodeArray);
       if (JSON.stringify(keyCodeArray) === JSON.stringify(konamiCode)){
-          $("h1").text("You Have Added 30 Lives!!!!!");
-          $('body').css('background-color', 'orange');
-
+          for(var i = 0; i < timer; i++){
+              $("p").text("You Have Added 30 Lives!!!!!").css('text-align', 'center');
+              $('p').addClass("contra-paragraph").fadeIn(1000).fadeOut(1000).fadeIn(1000);
+              $('h1').addClass("contra-title").fadeIn(1000).fadeOut(1000).fadeIn(1000);
+              // $('body').css('background-color', 'blue').fadeIn(1000).fadeOut(1000).fadeIn(1000);
+              $('body').addClass('contra-image').fadeIn(6000);
+          };
+          var snd = new Audio("sounds/Contra SFX (25).wav"); // buffers automatically when created
+          snd.play();
       };
       return keyCodeArray;
   });
