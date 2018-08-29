@@ -4,12 +4,23 @@
 
     <meta charset="UTF-8">
     <title>jQuery FAQ</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <style>
+        .contra-title{
+            color: white;
+            background-color: rgba(0, 0, 0, 0.22);
+            height: 100px;
+            text-align: right;
+            font-family: "Droid Serif";
+            font-size: 70px;
+            margin: 0 auto;
+        }
         .title{
             text-align: center;
             background-color: grey;
             border: 2px solid black;
             padding: 1em;
+            margin-bottom: 1em;
         }
         .invisible{
             display: none;
@@ -30,24 +41,53 @@
             border: 5px solid black;
             padding: 3em;
         }
+        .picture{
+            background-color: gray;
+            margin: 2em;
+            border: 5px solid black;
+            padding: 1em;
+            float: left;
+            /*height: 200px;*/
+            /*width: 200px;*/
+            /*display: block;*/
+         }
+        
         dl {
             margin-bottom: 3em;
         }
         /*button{*/
             /*margin-left: 4em;*/
         /*}*/
-        dt{
+        dt, h3{
             margin-top: 2em;
             margin-bottom: .5em;
             font-style: italic;
             font-weight: bold;
         }
+
         .blue{
             color: blue;
         }
         .bolded{
             font-weight: bold;
         }
+
+        /*.sequoia{*/
+            /*background-image: url("images/General_Sherman_tree.jpg");*/
+            /*object-fit: contain;*/
+            /*max-width: 100%;*/
+            /*max-height: 100%;*/
+            /*!*width: 100%;*!*/
+        /*}*/
+
+        /*.yellowstone{*/
+            /*background-image: url("images/Old_faithful_geyser.jpg");*/
+        /*}*/
+
+        /*.badlands{*/
+            /*background-image: url("images/Window_Trail.JPG");*/
+        /*}*/
+
 
     </style>
 
@@ -139,6 +179,34 @@
 
 </ul>
 
+
+<div class="row">
+
+    <div class="picture col left-side">
+        <img src="images/General_Sherman_tree.jpg" alt="" class="img-thumbnail w-100 h-100">
+    </div>
+
+
+    <div class="picture col center">
+        <img src="images/Old_faithful_geyser.jpg" alt="" class="img-thumbnail w-100 h-100">
+    </div>
+
+
+    <div class="picture col right-side">
+        <img src="images/Window_Trail.JPG" alt="" class="img-thumbnail w-100 h-100">
+    </div>
+
+</div>
+<div class="row">
+    <button type="button" class="btnsize btnLeft col btn-sm mx-5 btn-secondary">Swap Right</button>
+    <button type="button" class="btnsize btnMiddle col btn-sm mx-5 btn-secondary">Swap Right or Left</button>
+    <button type="button" class="btnsize btnRight col btn-sm mx-5 btn-secondary">Swap Left</button>
+
+</div>
+
+
+
+
 <!-- Exercise #1-->
 <!--In a HTML structure, create a definition list containing 10 FAQs about national parks.-->
 
@@ -178,7 +246,9 @@ jQuery to accomplish this.-->
 <!--The right frame swaps to the left and takes the image from the frame in the center.-->
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>-->
 <script>
     "use strict";
 
@@ -202,7 +272,50 @@ jQuery to accomplish this.-->
         $(this).parent().children().first().toggleClass('blue')
     });
 
+    var sequoia = "images/General_Sherman_tree.jpg";
+    var yellowstone = "images/Old_faithful_geyser.jpg";
+    var badlands = "images/Window_Trail.JPG";
 
+    $(".btnLeft").click(function() {
+        var img1 = $(this).parent().prev().children().first().children();
+        var src1 = $(this).parent().prev().children().first().children().attr('src');
+        var src2 = $(this).parent().prev().children().first().next().children().attr('src');
+        $(this).parent().prev().children().first().children().attr('src', src2);
+        $(this).parent().prev().children().first().next().children().attr('src', src1);
+
+    });
+
+    $(".btnRight").click(function() {
+        var img1 = $(this).parent().prev().children().first().next().next().children();
+        var src3 = $(this).parent().prev().children().first().next().next().children().attr('src');
+        var src2 = $(this).parent().prev().children().first().next().children().attr('src');
+        $(this).parent().prev().children().first().next().next().children().attr('src', src2);
+        $(this).parent().prev().children().first().next().children().attr('src', src3);
+
+    });
+
+    $(".btnMiddle").click(function() {
+        var src1 = $(this).parent().prev().children().first().children().attr('src');
+        var src3 = $(this).parent().prev().children().first().next().next().children().attr('src');
+        var src2 = $(this).parent().prev().children().first().next().children().attr('src');
+
+        var myArray = [
+            src1,
+            src3,
+        ];
+
+        var randomItem = myArray[Math.floor(Math.random()*myArray.length)];
+        console.log(randomItem);
+
+        if (randomItem === src1){
+            $(this).parent().prev().children().first().children().attr('src', src2);
+            $(this).parent().prev().children().first().next().children().attr('src', src1);
+        }
+        else if (randomItem === src3){
+            $(this).parent().prev().children().first().next().next().children().attr('src', src2);
+            $(this).parent().prev().children().first().next().children().attr('src', src3);
+        }
+    });
 
 
 
@@ -229,7 +342,7 @@ jQuery to accomplish this.-->
         }
 
         else{
-            // $('div').text("You Entered the Konami Code!!!");
+            $('div').text("You Entered the Konami Code!!!");
             $('h1').animate({
                 left: '500px',
                 opacity: '0.5',
@@ -279,5 +392,6 @@ jQuery to accomplish this.-->
     // end of Konami Code
 
 </script>
+
 </body>
 </html>
