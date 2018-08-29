@@ -277,7 +277,6 @@ jQuery to accomplish this.-->
     var badlands = "images/Window_Trail.JPG";
 
     $(".btnLeft").click(function() {
-        var img1 = $(this).parent().prev().children().first().children();
         var src1 = $(this).parent().prev().children().first().children().attr('src');
         var src2 = $(this).parent().prev().children().first().next().children().attr('src');
         $(this).parent().prev().children().first().children().attr('src', src2);
@@ -286,7 +285,6 @@ jQuery to accomplish this.-->
     });
 
     $(".btnRight").click(function() {
-        var img1 = $(this).parent().prev().children().first().next().next().children();
         var src3 = $(this).parent().prev().children().first().next().next().children().attr('src');
         var src2 = $(this).parent().prev().children().first().next().children().attr('src');
         $(this).parent().prev().children().first().next().next().children().attr('src', src2);
