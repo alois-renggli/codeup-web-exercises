@@ -93,6 +93,10 @@
 
 </head>
 <body class="main">
+<div>
+    <h1>Would you like to sign up for our newsletter?</h1>
+    <span>X</span>
+</div>
 <h1 class="title">10 FAQs about National Parks</h1>
 <button type="button" class="open-list">Expand for Answers to the Questions.</button>
 <dl>
@@ -203,7 +207,7 @@
     <button type="button" class="btnsize btnRight col btn-sm mx-5 btn-secondary">Swap Left</button>
 
 </div>
-
+<h2 class="fade-in mt-5">Would you like to register to this site???</h2>
 
 
 
@@ -245,6 +249,26 @@ jQuery to accomplish this.-->
 <!--The center frame swaps randomly to either the left or right.-->
 <!--The right frame swaps to the left and takes the image from the frame in the center.-->
 
+
+<!--Exercise #3-->
+<!--At the top of the page, add a div with two elements, an h1 that reads
+"Would you like to sign up for our newsletter?" and a span that has an 'x' in it. When the 'x' is clicked,
+ hide the entire div element.-->
+
+<!--The uls next to each h3 that contain facts about each park should start out hidden,
+and when the corresponding h3 is clicked, the display of the ul should be toggled with a sliding effect.-->
+
+<!--After the user has been on the page for 8 seconds, an h2 should fade in
+that asks the user to register for the site.-->
+
+<!--As always, make sure you are adding, commiting and pushing to Github.-->
+
+<!--Bonus-->
+
+<!--Use a bootstrap alert for the dismissable message that shows on page load.-->
+
+<!--Use a bootstrap modal for the message that fades in after 8 seconds. You may find that you can use bootstrap's modal methods to achieve the fading effect.-->
+
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>-->
@@ -265,12 +289,24 @@ jQuery to accomplish this.-->
     });
 
     $('h3').click(function(){
-        $(this).next().children().toggleClass('bolded')
+        $(this).next().children().toggleClass('bolded');
+        $(this).next().slideToggle(700);
     });
 
     $('li').click(function(){
         $(this).parent().children().first().toggleClass('blue')
     });
+
+    $('body').children().first().hide();
+
+    $('ul').each(function () {
+        $(this).hide();
+    });
+    $('.fade-in').hide();
+
+    setTimeout(function(){
+        $('.fade-in').fadeIn();
+    }, 8000);
 
     var sequoia = "images/General_Sherman_tree.jpg";
     var yellowstone = "images/Old_faithful_geyser.jpg";
