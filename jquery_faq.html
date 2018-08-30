@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <title>jQuery FAQ</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -71,32 +70,53 @@
         .bolded{
             font-weight: bold;
         }
-
-        /*.sequoia{*/
-            /*background-image: url("images/General_Sherman_tree.jpg");*/
-            /*object-fit: contain;*/
-            /*max-width: 100%;*/
-            /*max-height: 100%;*/
-            /*!*width: 100%;*!*/
-        /*}*/
-
-        /*.yellowstone{*/
-            /*background-image: url("images/Old_faithful_geyser.jpg");*/
-        /*}*/
-
-        /*.badlands{*/
-            /*background-image: url("images/Window_Trail.JPG");*/
-        /*}*/
-
-
     </style>
 
 </head>
 <body class="main">
-<div>
-    <h1>Would you like to sign up for our newsletter?</h1>
-    <span>X</span>
+
+<div class="alert alert-warning alert-dismissible" role="alert">
+    <div class="row">
+        <h4 class="col-11">Would you like to sign up for our newsletter?</h4>
+        <button type="button" class="close col-1 font-size-sm" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </div>
+
+    <div class="row">
+        <label for="newsletter" class="ml-3">YES, sign me up!</label>
+        <input type="checkbox" id="newsletter" class="ml-2 mt-1" checked>
+    </div>
+
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg border-box " role="document">
+        <div class="modal-content bg-secondary">
+
+            <div class="modal-header pl-0 pr-0">
+                <div class="col"></div>
+                <h2 class="modal-title text-center text-white p-0 col-10" id="myModalLabel">Would you like to register to this site???</h2>
+                <div class="col"></div>
+            </div>
+
+            <div class="modal-body row">
+                <div class="col"></div>
+                <div class="col-10">
+                    <label for="email" class="ml-5 text-white">Enter your email address here:</label>
+                    <input type="email" id="email" size="35">
+                </div>
+                <div class="col"></div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Sign Up!</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <h1 class="title">10 FAQs about National Parks</h1>
 <button type="button" class="open-list">Expand for Answers to the Questions.</button>
 <dl>
@@ -156,30 +176,30 @@
 <h3>Yellowstone</h3>
 
 <ul>
-    <li>HQ Location: 2 Officers Row, Yellowstone National Park Headquarters, Yellowstone National Park, WY 82190</li>
-    <li>Date Established: March 1, 1872</li>
-    <li>Top Visited Attraction: Old Faithful Geyser</li>
-    <li>Annual Entrance Pass Fee: $70.00 </li>
+    <li><span>HQ Location: 2 Officers Row, Yellowstone National Park Headquarters, Yellowstone National Park, WY 82190</span></li>
+    <li><span>Date Established: March 1, 1872</span></li>
+    <li><span>Top Visited Attraction: Old Faithful Geyser</span></li>
+    <li><span>Annual Entrance Pass Fee: $70.00</span></li>
 
 </ul>
 
 <h3>Sequoia</h3>
 
 <ul>
-    <li>HQ Location: 47050 Generals Highway Three Rivers, CA 93271</li>
-    <li>Date Established: September 25, 1890</li>
-    <li>Top Visited Attraction: General Sherman Tree (largest tree on earth)</li>
-    <li>Annual Entrance Pass Fee: $60.00</li>
+    <li><span>HQ Location: 47050 Generals Highway Three Rivers, CA 93271</span></li>
+    <li><span>Date Established: September 25, 1890</span></li>
+    <li><span>Top Visited Attraction: General Sherman Tree (largest tree on earth)</span></li>
+    <li><span>Annual Entrance Pass Fee: $60.00</span></li>
 
 </ul>
 
 <h3>Badlands</h3>
 
 <ul>
-    <li>HQ Location: 25216 Ben Reifel Road, Interior, SD 57750</li>
-    <li>Date Established: November 10, 1978</li>
-    <li>Top Visited Attraction: The Window Trail</li>
-    <li>Annual Entrance Pass Fee: $40.00</li>
+    <li><span>HQ Location: 25216 Ben Reifel Road, Interior, SD 57750</span></li>
+    <li><span>Date Established: November 10, 1978</span></li>
+    <li><span>Top Visited Attraction: The Window Trail</span></li>
+    <li><span>Annual Entrance Pass Fee: $40.00</span></li>
 
 </ul>
 
@@ -207,7 +227,7 @@
     <button type="button" class="btnsize btnRight col btn-sm mx-5 btn-secondary">Swap Left</button>
 
 </div>
-<h2 class="fade-in mt-5">Would you like to register to this site???</h2>
+
 
 
 
@@ -271,8 +291,8 @@ that asks the user to register for the site.-->
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>-->
-<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script>
     "use strict";
 
@@ -285,7 +305,7 @@ that asks the user to register for the site.-->
     });
 
     $('.highlight-li').click(function(){
-        $('ul').children().next().next().next().toggleClass('highlighted')
+        $('ul').children().next().next().next().children().toggleClass('highlighted')
     });
 
     $('h3').click(function(){
@@ -297,16 +317,24 @@ that asks the user to register for the site.-->
         $(this).parent().children().first().toggleClass('blue')
     });
 
-    $('body').children().first().hide();
+    // $('body').children().first().children().next().click(function(){
+    //     $('body').children().first().hide();
+    // });
 
     $('ul').each(function () {
         $(this).hide();
     });
-    $('.fade-in').hide();
+    // $('#myModal').hide();
 
     setTimeout(function(){
-        $('.fade-in').fadeIn();
+        $('#myModal').modal('show');
     }, 8000);
+
+    // $enable-gradients = true;
+
+
+
+    //Picture Swapping Code
 
     var sequoia = "images/General_Sherman_tree.jpg";
     var yellowstone = "images/Old_faithful_geyser.jpg";
