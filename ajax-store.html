@@ -2,13 +2,14 @@
 <html>
 <head>
     <title>Online Store</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
-<body>
+<body class="m-3">
 
-<h1>My Tool Store</h1>
+<h1 class="text-center">My Tool Store</h1>
 
-<table id="products">
-    <thead>
+<table id="products" class="table table-striped table-bordered table-hover table-active">
+    <thead class="thead-dark">
         <tr>
             <th>Title</th>
             <th>Quantity</th>
@@ -18,34 +19,61 @@
     </thead>
     <tbody id="insertProducts"></tbody>
 </table>
-
+<button type="button" id="refresh" onclick="refreshPage()">Refresh</button>
 <!--Download and save ajax-store.html.-->
 <!--Create a data directory and download inventory.json to that folder.-->
-<!--Your online tool store should load data from the JSON file using a get request and append the data to the table. You will need to use either $.ajax() or $.get(), and a .done() callback.-->
+<!--Your online tool store should load data from the JSON file using a get request and append the data to the table.
+You will need to use either $.ajax() or $.get(), and a .done() callback.-->
 <!--Add some new entries to inventory.json and see how the data on the page gets updated.-->
 <!--Add a "Refresh" button that will load inventory.json for you without having to refresh the entire page.-->
 <!--Add Twitter Bootstrap to your online store with some custom CSS to make the style your own-->
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script>
 (function() {
     "use strict";
     // TODO: Create an ajax GET request for /data/inventory.json
+     $.ajax("data/inventory.json").done(function(data, status, jqXhr) {
+            // alert("AJAX call completed successfully!");
+            console.log("Request status: " + status);
+            console.log("Data returned from server:");
+            console.log(data);
+            // list.push(data);
+            data.forEach(function(element){
+                $("#insertProducts").append("<tr><td>" + element.title + "</td><td>" + element.quantity + "</td><td>" + element.price + "</td><td>" + element.categories + "</td></tr>");
+            });
 
-$.ajax("data/inventory.json").done(function(data, status, jqXhr) {
-    alert("AJAX call completed successfully!");
-    console.log("Request status: " + status);
-    console.log("Data returned from server:");
-    console.log(data);
-});
+        });
 
     // TODO: Take the data from inventory.json and append it to the products table
     //       HINT: Your data should come back as a JSON object; use console.log() to inspect
     //             its contents and fields
     //       HINT: You will want to target #insertProducts for your new HTML elements
+
+
+
+
 })();
+
+function refreshPage(){
+    $.ajax("data/inventory.json").done(function(data, status, jqXhr) {
+        // alert("AJAX call completed successfully!");
+        console.log("Request status: " + status);
+        console.log("Data returned from server:");
+        console.log(data);
+        // list.push(data);
+        $("#insertProducts").children().remove();
+        data.forEach(function(element){
+            $("#insertProducts").append("<tr><td>" + element.title + "</td><td>" + element.quantity + "</td><td>" + element.price + "</td><td>" + element.categories + "</td></tr>");
+        });
+
+    });
+};
+// $('#refresh').on('click', refreshPage());
 
 
 
