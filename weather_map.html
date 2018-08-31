@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Map API</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://openweathermap.org/img/w/[icon].png">
+    <style>
+        body{
+            background-color: #b5dbfa;
+        }
+        .bg-gray{
+            background-color: #f2f2f2;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body class="container border-box">
+<header>
+<h1 class="my-3">Weather Application</h1>
+
+<h2 class="city my-3"></h2>
+</header>
+<main class="container">
+    <div class="weather row"></div>
+</main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script>
+    $.get("https://api.openweathermap.org/data/2.5/forecast", {
+        APPID: "0c1be89ae53d58f619a861b8c89ce44b",
+        q:     "San Antonio, US",
+        units: "imperial"
+    }).done(function(data) {
+        console.log(data);
+        console.log(data.city.name);
+        $(".city").html(data.city.name);
+        var weatherArray = data.list;
+        console.log(weatherArray);
+        weatherArray.forEach(function(element, index){
+            if (index <3){
+                var weather = "<div class='col-4 p-0 bg-gray text-center border-box'>";
+                weather += "<h4 class=''>" + element.main.temp_max.toFixed(0) + "&#176; / " + element.main.temp_min.toFixed(0) + "&#176;</h4>";
+                // weather += "<p>Min Temperature: " + element.main.temp_min + "</p>";
+                // weather += "<p><b>Current Temperature:</b> " + element.main.temp + "</p>";
+                weather += "<img src='http://openweathermap.org/img/w/" + element.weather[0].icon + ".png'>";
+
+                weather += "<p><b>Current cloud cover:</b> " + element.weather[0].description + "</p>";
+                weather += "<p><b>Humidity:</b> " + element.main.humidity + "%" + "</p>";
+                weather += "<p><b>Wind:</b> " + element.wind.speed + " knots</p>";
+                weather += "<p><b>Pressure:</b> " + element.main.pressure + " millibars</p>";
+
+                weather += "</div>";
+                $(".weather").append(weather);
+            }
+        })
+
+    });
+
+</script>
+</body>
+</html>

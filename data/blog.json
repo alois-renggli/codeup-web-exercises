@@ -23,7 +23,14 @@
     "categories": [
       "none"
     ],
+    "date": "August 30, 2018"
+  },
+  {
+    "title": "The Fourth Post",
+    "content": "This is another test",
+    "categories": [
+      "none"
+    ],
     "date": "August 31, 2018"
   }
-
 ]

@@ -34,8 +34,11 @@
             console.log("Data returned from server:");
             console.log(data);
             // list.push(data);
-            data.forEach(function(element){
-                $("#posts").append("<div class='row border p-2'><p class='col-12 font-weight-bold'>" + element.date + "</p><h5 class='col font-italic'>" + element.title + "</h5><p class='col-12'>Categories: " + element.categories + "</p><p class='col-12'>" + element.content + "</p></div>");
+            var length = data.length-1;
+            data.forEach(function(element, index){
+                $("#posts").append("<div class='row border p-2'><p class='col-12 font-weight-bold'>" + data[length - index].date + "</p><h5 class='col font-italic'>" + data[length - index].title + "</h5><p class='col-12'>Categories: " + data[length - index].categories + "</p><p class='col-12'>" + data[length - index].content + "</p></div>");
+                // $("#posts").append("<div class='row border p-2'><p class='col-12 font-weight-bold'>" + data[length - index].date + "</p></div>");
+
             });
 
         });
@@ -49,8 +52,9 @@
             console.log(data);
             // list.push(data);
             $("#posts").children().remove();
-            data.forEach(function(element){
-                $("#posts").append("<div class='row border p-2'><p class='col-12 font-weight-bold'>" + element.date + "</p><h5 class='col font-italic'>" + element.title + "</h5><p class='col-12'>Categories: " + element.categories + "</p><p class='col-12'>" + element.content + "</p></div>");
+            var length = data.length-1;
+            data.forEach(function(element, index){
+                $("#posts").append("<div class='row border p-2'><p class='col-12 font-weight-bold'>" + data[length - index].date + "</p><h5 class='col font-italic'>" + data[length - index].title + "</h5><p class='col-12'>Categories: " + data[length - index].categories + "</p><p class='col-12'>" + data[length - index].content + "</p></div>");
             });
 
         });
