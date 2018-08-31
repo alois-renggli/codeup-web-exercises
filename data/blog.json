@@ -16,5 +16,14 @@
             "sugar"
         ],
         "date": "February 14, 2015"
-    }
+    },
+  {
+    "title": "The Third Post",
+    "content": "This is a test",
+    "categories": [
+      "none"
+    ],
+    "date": "August 31, 2018"
+  }
+
 ]
