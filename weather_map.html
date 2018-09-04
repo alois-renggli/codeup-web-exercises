@@ -13,30 +13,54 @@
             background-color: #f2f2f2;
             border: 1px solid black;
         }
+        #map-canvas {
+            width: 770px;
+            height: 481px;
+            border: 5px;
+        }
     </style>
 </head>
 <body class="container border-box">
-<header>
-<h1 class="my-3">Weather Application</h1>
 
-<h2 class="city my-3"></h2>
-</header>
-<main class="container">
-    <div class="weather row"></div>
-</main>
+    <header>
+    <h1 class="my-3 text-center">Weather Application</h1>
+        <h6 class="text-center">Enter coordinates (decimal degrees) to update weather location:</h6>
+        <form action="" class="row">
+            <label for="latitude">Latitude:</label>
+            <input type="text" id="latitude" class="col-4 mx-2">
+            <label for="longitude">Longitude:</label>
+            <input type="text" id="longitude" class="col-4 mx-2">
+            <div class="col"></div>
+            <button type="button" onclick="updateCoord()" class="col-4 mt-3">Submit Coordinates</button>
+            <div class="col"></div>
+        </form>
+    <h2 class="city my-3"></h2>
+    </header>
+    <main class="container">
+        <div class="weather row"></div>
+    </main>
+    <section class="container">
+        <div id="map-canvas" class="border border-dark my-5 w-100"></div>
+    </section>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBptb2N2leT4ZcxQxmQLb2iqClfk1Jg5xw"></script>
+
 <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script>
-    $.get("https://api.openweathermap.org/data/2.5/forecast", {
+    // var apiKey = localStorage.getItem("owmApiKey");
+    // var cityName ='';
+
+        $.get("https://api.openweathermap.org/data/2.5/forecast", {
         APPID: "0c1be89ae53d58f619a861b8c89ce44b",
         q:     "San Antonio, US",
         units: "imperial"
     }).done(function(data) {
         console.log(data);
         console.log(data.city.name);
+        cityName = data.city.name;
         $(".city").html(data.city.name);
         var weatherArray = data.list;
         console.log(weatherArray);
@@ -48,18 +72,150 @@
                 // weather += "<p><b>Current Temperature:</b> " + element.main.temp + "</p>";
                 weather += "<img src='http://openweathermap.org/img/w/" + element.weather[0].icon + ".png'>";
 
-                weather += "<p><b>Current cloud cover:</b> " + element.weather[0].description + "</p>";
+                weather += "<p><b>Clouds:</b> " + element.weather[0].description + "</p>";
                 weather += "<p><b>Humidity:</b> " + element.main.humidity + "%" + "</p>";
-                weather += "<p><b>Wind:</b> " + element.wind.speed + " knots</p>";
-                weather += "<p><b>Pressure:</b> " + element.main.pressure + " millibars</p>";
+                weather += "<p><b>Wind:</b> " + Math.round(element.wind.speed) + " mph</p>";
+                weather += "<p><b>Pressure:</b> " + element.main.pressure + " hPa</p>";
 
                 weather += "</div>";
                 $(".weather").append(weather);
             }
         })
+            var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+            var marker = new google.maps.Marker({
+                position: mapOptions.center,
+                map: map,
+                animation: google.maps.Animation.DROP,
+                draggable: true,
+            });
 
+            var infowindow = new google.maps.InfoWindow({
+                content: "Location: "+ cityName,
+            });
+
+            marker.addListener('click', function() {
+                infowindow.open(map, marker);
+
+            });
+        return cityName;
     });
 
+
+    var mapOptions = {
+        // Set the zoom level
+        zoom: 8,
+
+        // This sets the center of the map at our location
+        center: {
+            lat: 29.4246,
+            lng: -98.4952
+        }
+    };
+
+    // function updateCoord(){
+    //     // console.log(lat);
+    //     console.log("test");
+    //     mapOptions = {
+    //         // Set the zoom level
+    //         zoom: 3,
+    //
+    //         // This sets the center of the map at our location
+    //         center: {
+    //             lat: latObj[0].value,
+    //             lng: longObj[0].value,
+    //         }
+    //     };
+    // }
+    // console.log(lat);
+    // each(function(index, element){
+        // if(index === 0){
+        //     console.log(element.value);
+        //     return element.value;
+        // }
+
+    // });
+
+
+
+    // Render the map
+
+    var forecast = {};
+    function updateCoord(){
+        var latObj = $('#latitude');
+        var longObj = $('#longitude');
+        var lat = latObj[0].value;
+        var long = longObj[0].value;
+        console.log(lat);
+        $.ajax("data/inventory.json").done(function(data, status, jqXhr) {
+            // alert("AJAX call completed successfully!");
+            console.log("Request status: " + status);
+            console.log("Data returned from server:");
+            console.log(data);
+            // list.push(data);
+            $(".weather").children().remove();
+            $.get("https://api.openweathermap.org/data/2.5/forecast", {
+                APPID: "0c1be89ae53d58f619a861b8c89ce44b",
+                lat:    lat,
+                lon:    long,
+                units: "imperial"
+            }).done(function(data) {
+                console.log(data);
+                console.log(data.city.name);
+                cityName = data.city.name;
+                $(".city").html(data.city.name);
+                var weatherArray = data.list;
+                console.log(weatherArray);
+                weatherArray.forEach(function(element, index){
+                    if (index <3){
+                        var weather = "<div class='col-4 p-0 bg-gray text-center border-box'>";
+                        weather += "<h4 class=''>" + element.main.temp_max.toFixed(0) + "&#176; / " + element.main.temp_min.toFixed(0) + "&#176;</h4>";
+                        // weather += "<p>Min Temperature: " + element.main.temp_min + "</p>";
+                        // weather += "<p><b>Current Temperature:</b> " + element.main.temp + "</p>";
+                        weather += "<img src='http://openweathermap.org/img/w/" + element.weather[0].icon + ".png'>";
+
+                        weather += "<p><b>Clouds:</b> " + element.weather[0].description + "</p>";
+                        weather += "<p><b>Humidity:</b> " + element.main.humidity + "%" + "</p>";
+                        weather += "<p><b>Wind:</b> " + Math.round(element.wind.speed) + " mph</p>";
+                        weather += "<p><b>Pressure:</b> " + element.main.pressure + " hPa</p>";
+
+                        weather += "</div>";
+                        $(".weather").append(weather);
+                    }
+                })
+                forecast = data;
+                mapOptions = {
+                    // Set the zoom level
+                    zoom: 10,
+
+                    // This sets the center of the map at our location
+                    center: {
+                        lat: forecast.city.coord.lat,
+                        lng: forecast.city.coord.lon,
+                    }
+                };
+                map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+                marker = new google.maps.Marker({
+                    position: mapOptions.center,
+                    map: map,
+                    animation: google.maps.Animation.DROP,
+                    draggable: true,
+                });
+
+                infowindow = new google.maps.InfoWindow({
+                    content: "Location: "+ cityName,
+                });
+
+                marker.addListener('click', function() {
+                    infowindow.open(map, marker);
+
+                });
+
+                return forecast;
+            });
+
+        });
+
+    };
 </script>
 </body>
 </html>
