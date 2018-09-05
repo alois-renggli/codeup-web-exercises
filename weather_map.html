@@ -22,7 +22,7 @@
 <body class="container border-box">
 
     <header id="current">
-    <h1 class="my-3 text-center">Weather Application</h1>
+    <h1 class="my-3">Weather Application</h1>
         <!--<h6 class="text-center">Enter coordinates (decimal degrees) to update weather location:</h6>-->
         <!--<form action="" class="row">-->
             <!--<label for="latitude">Latitude:</label>-->
@@ -55,34 +55,34 @@
     // var apiKey = localStorage.getItem("owmApiKey");
     // var cityName ='';
 
-    //     $.get("https://api.openweathermap.org/data/2.5/forecast", {
-    //     APPID: localStorage.getItem("weatherapikey"),
-    //     q:     "San Antonio, US",
-    //     units: "imperial"
-    // }).done(function(data) {
-    //     console.log(data);
-    //     console.log(data.city.name);
-    //     cityName = data.city.name;
-    //     $(".city").html(data.city.name);
-    //     var weatherArray = data.list;
-    //     console.log(weatherArray);
-    //     weatherArray.forEach(function(element, index){
-    //         if (index <3){
-    //             var weather = "<div class='col-4 p-0 bg-gray text-center border-box'>";
-    //             weather += "<h4 class=''>" + element.main.temp_max.toFixed(0) + "&#176; / " + element.main.temp_min.toFixed(0) + "&#176;</h4>";
-    //             // weather += "<p>Min Temperature: " + element.main.temp_min + "</p>";
-    //             // weather += "<p><b>Current Temperature:</b> " + element.main.temp + "</p>";
-    //             weather += "<img src='http://openweathermap.org/img/w/" + element.weather[0].icon + ".png'>";
-    //
-    //             weather += "<p><b>Clouds:</b> " + element.weather[0].description + "</p>";
-    //             weather += "<p><b>Humidity:</b> " + element.main.humidity + "%" + "</p>";
-    //             weather += "<p><b>Wind:</b> " + Math.round(element.wind.speed) + " mph</p>";
-    //             weather += "<p><b>Pressure:</b> " + element.main.pressure + " hPa</p>";
-    //
-    //             weather += "</div>";
-    //             $(".weather").append(weather);
-    //         }
-    //     })
+        $.get("https://api.openweathermap.org/data/2.5/forecast", {
+        APPID: localStorage.getItem("weatherapikey"),
+        q:     "San Antonio, US",
+        units: "imperial"
+    }).done(function(data) {
+        console.log(data);
+        console.log(data.city.name);
+        cityName = data.city.name;
+        $(".city").html(data.city.name);
+        var weatherArray = data.list;
+        console.log(weatherArray);
+        weatherArray.forEach(function(element, index){
+            if (index <3){
+                var weather = "<div class='col-4 p-0 bg-gray text-center border-box'>";
+                weather += "<h4 class=''>" + element.main.temp_max.toFixed(0) + "&#176; / " + element.main.temp_min.toFixed(0) + "&#176;</h4>";
+                // weather += "<p>Min Temperature: " + element.main.temp_min + "</p>";
+                // weather += "<p><b>Current Temperature:</b> " + element.main.temp + "</p>";
+                weather += "<img src='http://openweathermap.org/img/w/" + element.weather[0].icon + ".png'>";
+
+                weather += "<p><b>Clouds:</b> " + element.weather[0].description + "</p>";
+                weather += "<p><b>Humidity:</b> " + element.main.humidity + "%" + "</p>";
+                weather += "<p><b>Wind:</b> " + Math.round(element.wind.speed) + " mph</p>";
+                weather += "<p><b>Pressure:</b> " + element.main.pressure + " hPa</p>";
+
+                weather += "</div>";
+                $(".weather").append(weather);
+            }
+        })
     //         var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
     //         var marker = new google.maps.Marker({
     //             position: mapOptions.center,
@@ -99,7 +99,7 @@
     //             infowindow.open(map, marker);
     //
     //         });
-    // });
+    });
 
     // CODE FOR WEATHER FORECAST BASED ON MAP MARKER LOCATION
     var mapOptions = {
