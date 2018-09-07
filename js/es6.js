@@ -53,21 +53,23 @@ let emails = [];
 let names = [];
 
 // TODO: rewrite the following using arrow functions
-// users.forEach(function(user) {
-//   return emails.push(user.email);
-// });
+users.forEach(user => emails.push(user.email));
 
-for(let user of users){
-    (user) => emails.push(user.email);
-}
+// function(user) {
+  // return emails.push(user.email);
+
+// );
+
+// for(let user of users){
+//     user => emails.push(user.email);
+// }
 
 // users.forEach(function(user) {
 //   return names.push(user.name);
 // });
 
-for (let user of users){
-    (user) => names.push(user.name);
-};
+// for (let user of users)
+    users.forEach(user => names.push(user.name));
 
 // TODO: replace `var` with `let` in the following declaration
 let developers = [];
@@ -93,8 +95,10 @@ let list = '<ul>';
 
 for(let developer of developers){
     // TODO: rewrite the assignment below to use template strings
-    list = `<li>${developer}</li>`;
-}
+    list += `<li>${developer}</li>`;
+};
 
 // });
 list += '</ul>';
+
+document.getElementById('list').innerHTML = list;
