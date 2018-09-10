@@ -63,27 +63,26 @@ console.log(emailArray);
 // Use reduce to get the total years of experience from the list of users.
 // Once you get the total of years you can use the result to calculate the average.
 const totalExperience = users.reduce(function (accumulator, n){
-    return accumulator + n.yearsOfExperience;
+     return accumulator + n.yearsOfExperience;
 }, 0);
 console.log(totalExperience);
+let average = totalExperience / users.length;
+console.log(average);
 
 //     Use reduce to get the longest email from the list of users.
 
-let emailLengths = users.map(function(n){
-        return n.email.length;
-});
+
 
 const longestEmail = users.reduce(function(accumulator, n){
-    // if (n.email.length ===
-       return  Math.max(...emailLengths)
-// ){
-        // return n.email
-    // }
-    // else {
-    //     return accumulator + n.email;
-    // }
 
+    if (n.email.length > accumulator.length){
+        return n.email;
+    }
+    else{
+        return accumulator;
+    }
 }, '');
+
 console.log(longestEmail);
 
 
@@ -101,8 +100,11 @@ console.log(longestEmail);
 
 
 
-const userNames = users.reduce(function (accumulator, n) {
-        return accumulator + ", " + n.name ;
+const userNames = users.reduce(function (accumulator, n, index) {
+        if (index === (users.length -1)){
+            return accumulator + n.name +"." ;
+        }
+        return accumulator + n.name + ", ";
 }, "Your instructors are: ");
 console.log(userNames);
 
@@ -133,7 +135,20 @@ console.log(userNames);
 // };
 //
 // console.log(countWords(users));
+//
+let languageArray = users.map(n => n.languages);
+console.log(languageArray);
+let filteredLanguages = languageArray.join(" ");
+console.log(filteredLanguages);
+filteredLanguages = filteredLanguages.split(" ");
+console.log(filteredLanguages);
 
+const uniqueLanguages = users.reduce(function(accumulator, n){
+    // users.filter(n => )
+        return n.languages;
+}, "The list of languages are: ")
+
+console.log(uniqueLanguages);
 
 
 
