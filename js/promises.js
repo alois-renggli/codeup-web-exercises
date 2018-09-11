@@ -37,13 +37,17 @@ wait(3000).then(() => console.log('You\'ll see this after 3 seconds'));
 //
 const lastCommit = (username) => {
     // console.log(fetch('https://api.github.com/users/' + username + '/events', {headers: {'Authorization': '8efb67a6a7d2186a2f6ff341041da10c20182699'}}));
-    fetch('https://api.github.com/users/' + username + '/events', {headers: {'Authorization': '8efb67a6a7d2186a2f6ff341041da10c20182699'}}).then((response) => {
-        console.log(response.json());
-        response.json();
-    }).then((user) => {
+    fetch('https://api.github.com/users/' + username + '/events', {headers: {'Authorization': ''}})
+        .then(data => {
+            let events = data.json();
+            let pushEvents = events.filter(event => event.type === "PushEvent");
+            return pushEvents[0].created_at;
+        })
+        // .then(events => events.filter(event => event.type === "PushEvent"))
+        // .then();
+}
 
-    });
-};
+
 lastCommit('alois-renggli');
 //
 // lastCommit('alois-renggli').then(() => console.log("The last commit is "));
